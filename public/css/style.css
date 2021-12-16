@@ -1,0 +1,21 @@
+.search-container {
+  background-image: url("../public/assets/images/hikingHero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ddd;
+}
+
+.input-field {
+  border-radius: 5px;
+}
+
+.input-field input[type="text"]:focus {
+  background-color: #ddd;
+}
