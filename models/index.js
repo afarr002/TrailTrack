@@ -8,10 +8,10 @@ User.hasMany(Trails, {
   onUpdate: "CASCADE",
 });
 
-User.hasMany(Books, {
-  foreignKey: "book_id",
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
-});
+// User.hasMany(Books, {
+//   foreignKey: "book_id",
+//   onDelete: "CASCADE",
+//   onUpdate: "CASCADE",
+// });
 
 module.exports = { User, Trails, Books };

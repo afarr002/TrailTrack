@@ -8,7 +8,7 @@ Books.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKay: true,
+      primaryKey: true,
       autoIncrement: true,
     },
     title: {
@@ -23,13 +23,13 @@ Books.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    book_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    // book_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
