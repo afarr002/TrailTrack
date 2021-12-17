@@ -15,11 +15,23 @@ Trails.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    trail_location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     difficulty: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    trail_length: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    route_type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
