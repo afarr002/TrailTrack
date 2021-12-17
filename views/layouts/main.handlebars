@@ -3,40 +3,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!--Import materialize.css-->
+    <!--Import Bulma CSS file-->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
+    <!-- Import local stylesheet -->
     <link rel="stylesheet" href="../../public/css/style.css" />
     <title>TrailTrack</title>
   </head>
+
   <body>
-    <nav>
-      <div class="nav-wrapper teal darken-4">
-        <a href="#" class="brand-logo">TrailTrack</a>
-        <ul class="right">
-          <li>
-            <a
-              href="#"
-              class="waves-effect waves-light teal darken-1 btn"
-            >Login<i class="material-icons right">person_outline</i></a>
-          </li>
-        </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a href="#" class="navbar-item is-size-1">TrailTrack</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="#" class="button">Log In</a>
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="row">
-        {{{body}}}
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          {{{body}}}
+        </div>
       </div>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-    ></script>
+    </section>
   </body>
 </html>
