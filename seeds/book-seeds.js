@@ -2,212 +2,222 @@ const { Books } = require("../models");
 
 const bookSeedData = [
   {
-    title: "Haunting of Molly Hartley, The",
-    author: "Waverley Broschek",
+    title: "Where Should We Camp Next?",
+    author: "Stephanie & Jeremy Puglisi",
     description:
-      "curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus",
+      "Your essential planning guidebook for family-friendly camping trips featuring 300+ of the best camping and glamping spots in the USA!",
     book_id: 1,
   },
   {
-    title: "Busting",
-    author: "Rhona Turone",
-    description:
-      "eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa",
+    title: "Bushcraft 101: A Field Guide to the Art of Wilderness Survival",
+    author: "Dave Canterbury",
+    description: "The ultimate resource for experiencing the backcountry!",
     book_id: 2,
   },
   {
-    title: "Gold of Naples, The (L'oro di Napoli)",
-    author: "Fiann Silversmid",
+    title:
+      "100 Parks, 5,000 Ideas: Where to Go, When to Go, What to See, What to Do",
+    author: "Joe Yogerst",
     description:
-      "libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus",
+      "Filled with helpful travel tips and beautiful National Geographic photography, this expert guide showcases the best experiences in the top national, state, and city parks throughout North America.",
     book_id: 3,
   },
   {
-    title: "Earth Trembles, The (Terra trema: Episodio del mare, La)",
-    author: "Pembroke Lafoy",
+    title:
+      "Moon USA National Parks: The Complete Guide to All 62 Parks (Travel Guide)",
+    author: "Becky Lomax",
     description:
-      "tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac",
+      "They've been dubbed America's best idea for a reason: get inspired, get outdoors, and discover the wild beauty of the United States with Moon USA National Parks.",
     book_id: 4,
   },
   {
-    title: "Dukes, The",
-    author: "Trudie Dingwall",
+    title: "The Lost Art of Reading Nature's Signs",
+    author: "Tristan Gooley",
     description:
-      "varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla",
+      "Use Outdoor Clues to Find Your Way, Predict the Weather, Locate Water, Track Animals―and Other Forgotten Skills. Turn every walk into a game of detection—from master outdoorsman Tristan Gooley, New York Times-bestselling author of The Secret World of Weather and The Natural Navigator",
     book_id: 5,
   },
   {
-    title: "This Girl's Life",
-    author: "Gilles Barbrick",
+    title: "The MeatEater Guide to Wilderness Skills and Survival",
+    author: "Steven Rinella",
     description:
-      "nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla",
+      "An indispensable guide to surviving everything from an extended wilderness exploration to a day-long boat trip, with hard-earned advice from the host of the show MeatEater as seen on Netflix",
     book_id: 6,
   },
   {
-    title: "X: The Unknown",
-    author: "Egon Bevington",
+    title: "SAS Survival Handbook",
+    author: "John 'Lofty' Wiseman",
     description:
-      "congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero",
+      "The Ultimate Guide to Surviving Anywhere, now updated with more than 100 pages of additional material, including a new chapter on urban survival",
     book_id: 7,
   },
   {
-    title: "The Christmas Wish",
-    author: "Adela Wharton",
-    description: "et tempus semper est quam pharetra magna ac consequat metus",
+    title: "A Walk in the Woods",
+    author: "Bill Bryson",
+    description:
+      "In this best-selling hiking-memoir-turned-feature-film, classic Bryson recounts his somewhat farcical attempt to hike the Appalachian Trail.",
     book_id: 8,
   },
   {
-    title: "Ringers: Lord of the Fans",
-    author: "Joanie Cutchee",
+    title: "America's Best Day Hikes",
+    author: "Derek Dellinger",
     description:
-      "nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra",
+      "Spectacular Single-Day Hikes Across the States. 50 of the greatest hikes in the country, for all abilities and in all landscapes.",
     book_id: 9,
   },
   {
-    title: "The Feminine Touch",
-    author: "Axe Broscombe",
+    title: "National Park Passport & Bucket List",
+    author: "Black Swan",
     description:
-      "ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra",
+      "U.S. Outdoor Adventure Guide Planner List, Camping, RV, Hiking Gear Equipment & Accessories Checklist. This BESTSELLER was produced in collaboration with a retired National Parks employee and is recommended by the National Parks Service Department!",
     book_id: 10,
   },
   {
-    title: "Tropic Thunder",
-    author: "Maryl Gypson",
+    title: "Wild: A Journey from Lost to Found",
+    author: "Cheryl Strayed",
     description:
-      "id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
+      "This best-selling memoir (now a feature film) charts the story a 22-year-old who took the bold and impulsive decision to hike more than 1,000 miles of the Pacific Crest Trail.",
     book_id: 11,
   },
   {
-    title: "Cria! (Cría cuervos)",
-    author: "Eachelle Stirman",
+    title: "A Walk Across America",
+    author: "Peter Jenkins",
     description:
-      "nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo",
+      "Twenty-five years ago, a disillusioned young man set out on a walk across America. This is the book he wrote about that journey – a classic account of the reawakening of his faith in himself and his country.",
     book_id: 12,
   },
   {
-    title: "Terumae romae (Thermae Romae)",
-    author: "Sascha Bellsham",
+    title: "The Pilgrimage: A Contemporary Quest for Ancient Wisdom",
+    author: "Paulo Coelho",
     description:
-      "at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed",
+      "Paulo Coelho details his journey across Spain along the legendary road of San Tiago, which pilgrims have travelled since the Middle Ages.",
     book_id: 13,
   },
   {
-    title: "Double Happiness",
-    author: "Carry Truin",
+    title: "Into the Wild",
+    author: "Jon Krakauer",
     description:
-      "dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis",
+      "In 1992, Chris McCandless hitchhiked to Alaska and walked alone into the wilderness. Four months later, his decomposed body was discovered. How McCandless came to die is the unforgettable story of Into the Wild.",
     book_id: 14,
   },
   {
-    title: "Wyrmwood",
-    author: "Suki Rowcliffe",
+    title:
+      "Grandma Gatewood’s Walk: The Inspiring Story of the Woman Who Saved the Appalachian Trail",
+    author: "Ben Montgomery",
     description:
-      "proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis",
+      "Emma Gatewood, a 67-year-old great grandmother, told her family she was going on a walk. The next anybody heard from her, she had walked 800 miles of the Appalachian Trail.",
     book_id: 15,
   },
   {
-    title: "Silmido",
-    author: "Cicily Proppers",
+    title: "Walking the Himalayas: An Adventure of Survival and Endurance",
+    author: "Levison Wood",
     description:
-      "magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel",
+      "Following his trek along the length of the Nile River, explorer Levison Wood takes on his greatest challenge yet: navigating the treacherous foothills of the world’s highest mountain range.",
     book_id: 16,
   },
   {
-    title: "Red Dust",
-    author: "Waiter Huddles",
+    title:
+      "The Backpacker’s Field Manual, Revised and Updated: A Comprehensive Guide to Mastering Backcountry Skills",
+    author: "Rick Curtis",
     description:
-      "in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere",
+      "When first published in 1998, this set the standard for comprehensive backpacking books. Updated for modern backpacking, it covers the latest developments in gear, first aid, Leave No Trace camping and outdoor leadership.",
     book_id: 17,
   },
   {
-    title: "Autumn Tale, An (Conte d'automne)",
-    author: "Gabriell Abrahams",
+    title: "Almost Somewhere: Twenty-Eight Days on the John Muir Trail",
+    author: "Suzanne Roberts",
     description:
-      "natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
+      "It was 1993 and Suzanne Roberts had just finished college when her friend suggested they hike California’s John Muir Trail. Part memoir, part nature writing, part travelogue, Almost Somewhere is Roberts’ account of that hike.",
     book_id: 18,
   },
   {
-    title: "Twilight Saga: Breaking Dawn - Part 1, The",
-    author: "Brianna Whitwam",
+    title:
+      "Fifty Places to Hike Before You Die: Outdoor Experts Share the World’s Greatest Destinations",
+    author: "Chris Santella",
     description:
-      "at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem",
+      "Chris Santella, with the help of top expedition leaders, explores the world’s greatest hiking destinations.",
     book_id: 19,
   },
   {
-    title: "Midnight in the Garden of Good and Evil",
-    author: "Danny Gay",
+    title: "The Ultimate Hiker’s Gear Guide",
+    author: "Andrew Skurka",
     description:
-      "ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa",
+      "This recently updated second edition is a show-and-tell guide to clothing, footwear, backpacks, shelter and more, and includes tips on foot care, campsite selection and hiking efficiency.",
     book_id: 20,
   },
   {
-    title: "Minority Report",
-    author: "Willamina Stoker",
+    title:
+      "America's Great Hiking Trails: Appalachian, Pacific Crest, Continental Divide, North Country, Ice Age, Potomac Heritage, Florida, Natchez Trace, Arizona, Pacific Northwest, New England",
+    author: "Karen Berger",
     description:
-      "vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus",
+      " A hiker’s dream bucket list is embodied in this lavishly illustrated celebration of more than 50,000 miles of America’s most iconic trails. Celebrating the forty most important trails in America, this volume takes the reader through forty-nine states and eight national parks.",
     book_id: 21,
   },
   {
-    title: "Charly",
-    author: "Freddie Blowick",
+    title: "Walking Distance: Extraordinary Hikes for Ordinary People",
+    author: "Robert E. Manning",
     description:
-      "mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam nam",
+      "Walking is simple, but it can also be profound. In an increasingly complex and frantic world, walking can simplify our lives. It encourages intimate contact with places and people, promotes health, and is one of the most sustainable forms of recreation. Robert and Martha Manning invite readers to explore the pleasures of long-distance walking in their inspiring new book, Walking Distance.",
     book_id: 22,
   },
   {
-    title: "Enchanted",
-    author: "Jeffrey Metterick",
+    title: "Classic Hikes of the World: 23 Breathtaking Treks",
+    author: "Peter Potterfield",
     description:
-      "quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer",
+      "This book will help you realize your dreams of hiking among the world's highest peaks and most scenic canyons, discovering wilderness far from the clamor of civilization, encountering rare birds and animals, glorying in sunsets over glacier-clad ranges, and feeling the joy and achievement of hiking some of the world's most spectacular trails.",
     book_id: 23,
   },
   {
-    title: "The Finzi Detective Agency",
-    author: "Sibylle Aubri",
+    title: "Classic Treks: The 30 Most Spectacular Hikes in the World",
+    author: "Bill Birkett",
     description:
-      "in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt",
+      "Judy Armstrong, Steve Callen, John Cleare, and other notable mountaineers, adventurers, and nature writers describe detailed descriptions of thirty outstanding hikes, describing the local customs, weather, flora and fauna, equipment, permits, and other important details, in a worldwide directory that is complemented by hundreds of full-color photographs and illustrations. 20,000 first printing.",
     book_id: 24,
   },
   {
-    title: "Kill Switch",
-    author: "Ula Aimson",
+    title: "The World's Great Adventure Treks",
+    author: "Jack Jackson",
     description:
-      "cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus",
+      "A strikingly illustrated guide to twenty of the worlds most exciting long- distance hikes. The twenty hikes featured in this lavishly illustrated guide cover every inhabited continent and range from a daring passage along the glaciers of the Karakorum to an age-old pilgrimage route through northern Spain, but they do have one thing in common: adventure. All the treks are of at least five days duration and present formidable challenges, like the hazards of extreme terrain or the need for self-sufficiency in landscapes traversed only by hardy locals. Hikers who successfully meet these challenges are rewarded with the sights and experiences of a lifetime: a breathtaking vista of the ruins of Machu Picchu, a delicious meal in a remote Greek mountain village, or even an encounter with New Zealands kea, the worlds only species of alpine parrot.",
     book_id: 25,
   },
   {
-    title: "Very Social Secretary, A",
-    author: "Saloma Fidge",
+    title:
+      "Classic Hikes of North America: 25 Breathtaking Treks in the United States and Canada",
+    author: "Peter Potterfield",
     description:
-      "vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla",
+      "Everything you need to know about the United States' and Canada's most enjoyable hiking routes and backcountry excursions. Classic Hikes of North America is a beautifully photographed and eminently practical account of the best backcountry journeys in the United States and Canada. Peter Potterfield, an experienced hiker and photographer, has analyzed and graded these spectacular wilderness experiences with both beginners and avid hikers in mind.",
     book_id: 26,
   },
   {
-    title: "Yes Men, The",
-    author: "Karry Emblen",
+    title:
+      "Hiking: Hiking and Backpacking Guide for Your Ultimate Trail Experience (Backpacking, Backpacking for Beginners, Hiking, Hiking for Beginners, Off Grid Living, Camping) (Volume 1)",
+    author: "Daniel Born",
     description:
-      "amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed",
+      "Discover the ultimate trail experience with this hiking and backpacking guide! Perfect for hiking and backpacking beginners and newbies! Also great for experienced hikers and backpackers!",
     book_id: 27,
   },
   {
-    title: "The Coven",
-    author: "Meryl Tupper",
+    title:
+      "Get Out And Hike!: A Beginners Guide To HIking (Hiking, Backpacking,Trail Adventures,Hiking Guide For Beginners)",
+    author: "Michele Gilbert",
     description:
-      "vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra",
+      "Would you like a way that might awaken you to discovering your innate talents? Would you like to widen your comfort zones?, Would you like to develop skills you didn't even know you had? Hiking and Backpacking are ways to help you do just that...and more! Hiking and Backpacking can lead to mental satisfaction, a true sense of achievement, build confidence,and even overcome depression. Check this out and see what you will learn.",
     book_id: 28,
   },
   {
-    title: "Love at Large",
-    author: "Derby Petre",
+    title:
+      "Backpacking: For Beginners - The Essential Traveler's Guide to Backpacking and Hiking Around The World",
+    author: "Andrew Stephenson",
     description:
-      "pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate",
+      "Planning your first backpacking trip can be daunting, especially with so much contradictory information out there. This is why Backpacking for Beginners: The Essential Traveler’s Guide to Backpacking and Hiking Around The World cuts to the chase and gives you the information you really need, in a compact, easy-to-read format. It contains tried-and-tested strategies and tips from real backpackers, as well as plenty of useful hacks. It takes you through the process, from choosing your destination to advice on what to take, how to choose your accommodation and how to stay safe. At the end of each chapter you’ll also find useful links to websites where you can find out more about specific aspects of backpacking.",
     book_id: 29,
   },
   {
-    title: "Citadel",
-    author: "Lance Waight",
+    title: "The Backpacker's Handbook, 4th Edition",
+    author: "Chris Townsend",
     description:
-      "consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum",
+      "What you need to know before you hit the trails. Whether you are backpacking for the first time or a veteran follower of the trails, this enormously practical guide includes everything you need to know, from essential techniques such as map and compass work to the skills needed for more remote wilderness journeys. The Backpacker's Handbook also gives you the latest information on gear.",
     book_id: 30,
   },
 ];
