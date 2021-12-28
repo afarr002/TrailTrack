@@ -1,4 +1,39 @@
+/* Landing Styles */
 .hero.has-background {
   background: url("../assets/images/hikingHero.jpg") center center;
   background-size: cover;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #2f4e32;
+}
+
+.navbar a {
+  color: white;
+}
+
+.login-button {
+  background-color: #4d6850;
+}
+
+/* Card Styles */
+.card-header {
+  background-color: #6a816d;
+}
+
+.card-header p {
+  color: white;
+}
+
+.card-content {
+  background-color: #e1e6e2;
+}
+
+.card-footer {
+  background-color: #c4ccc5;
+}
+
+.card-footer a {
+  color: black;
 }
