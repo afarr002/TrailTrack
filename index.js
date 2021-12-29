@@ -1,7 +1,18 @@
+// require("dotenv").config();
+// const npsApiKey = process.env.NPS_API_KEY;
+// const weatherApiKey = process.env.WEATHER_API_KEY;
+const npsApiKey = "oSfzNz3dTkFvHFrco2C2sYljO4uhXBaTYHwx7kib";
+const weatherApiKey = "66cae1bd334eb7747100576e02048328";
+
 const insertCampgroundsEl = document.querySelector("#insertCampgroundsEl");
+// const insertFutureCampgroundWeatherEl =
+//   document.querySelector("#insertWeatherCard");
+// let campLat = "";
+// let campLon = "";
+let campName = "";
 
 const getCampgrounds = () => {
-  const getCampApiUrl = `https://developer.nps.gov/api/v1/campgrounds?stateCode=CO&api_key=oSfzNz3dTkFvHFrco2C2sYljO4uhXBaTYHwx7kib`;
+  const getCampApiUrl = `https://developer.nps.gov/api/v1/campgrounds?stateCode=CO&api_key=${npsApiKey}`;
 
   fetch(getCampApiUrl)
     .then((res) => {
@@ -12,8 +23,12 @@ const getCampgrounds = () => {
       // futureWeather();
 
       for (i = 0; i < info.data.length; i++) {
+        // campLat = info.data[i].latitude;
+        // campLon = info.data[i].longitude;
+        campName = info.data[i].name;
+        // futureWeather();
         const template = `<div class="card" style="width: 18rem">
-            <div class="card-header whiteText">${info.data[i].name}</div>
+            <div class="card-header whiteText">${campName}</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Description: ${
                   info.data[i].description
@@ -31,9 +46,10 @@ const getCampgrounds = () => {
                     ? info.data[i].images[0].url
                     : ""
                 }" alt="${
-          info.data[i].images.length > 0 ? info.data[i].images[0].altText : ""
+          info.data[i].images.length > 0
+            ? info.data[i].images[0].altText
+            : `Image of ${campName}`
         }"></li>
-                <li class="list-group-item"></li>
               </ul>
         </div>`;
         insertCampgroundsEl.innerHTML = template;
@@ -41,16 +57,32 @@ const getCampgrounds = () => {
     });
 };
 
-const futureWeather = (info) => {
-  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${info.data[2].latitude}&lon=${info.data[2].longitude}&appid=66cae1bd334eb7747100576e02048328&units=imperial`;
+// const futureWeather = () => {
+//   const weatherApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${campLat}&lon=${campLon}&appid=${weatherApiKey}&units=imperial`;
 
-  fetch(weatherApiUrl)
-    .then((res) => {
-      return res.json();
-    })
-    .then((weatherInfo) => {
-      console.log(weatherInfo);
-    });
-};
+//   fetch(weatherApiUrl)
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((weatherInfo) => {
+//       console.log(weatherInfo);
+
+//       for (i = 0; i > weatherInfo.daily.length; i++) {
+//         const weatherCard = `<div class="currentBlock">
+//           <h2>
+//             ${campName} (${new Date().toLocaleDateString()})
+//           </h2>
+//           <p>Max Temp: ${weatherInfo.daily[i].temp.max}F</p>
+//           <p>Min Temp: ${weatherInfo.daily[i].temp.min}F</p>
+//           <p>Weather: ${
+//             weatherInfo.daily[i].weather[0].description
+//           } <img src="https://openweathermap.org/img/w/${
+//           weatherInfo.daily[i].weather[0].icon
+//         }.png"></p>
+//         </div>`;
+//         insertFutureCampgroundWeatherEl.innerHTML = template;
+//       }
+//     });
+// };
 
 getCampgrounds();
