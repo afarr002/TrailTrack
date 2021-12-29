@@ -52,12 +52,17 @@ User.init(
         return this.getDataValue("favoritedBooks");
       },
       set: function (val) {
-        return this.setDataValue("favoritedBooks", JSON.stringify(val));
-        // if (JSON.stringify(val) === null) {
-        //   return this.setDataValue(JSON.stringify(val));
-        // } else {
-        //   return this.setDataValue("favoritedBooks", JSON.stringify(val));
-        // }
+        let favBooks = JSON.stringify(val).replace(/\\/g, "");
+        this.setDataValue("favoritedBooks", favBooks);
+        return favBooks;
+        /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
+        let favBooks = JSON.stringify(val).replace(/\\/g, "");
+        return favBooks; */
+        /* if (JSON.stringify(val) === null) {
+          return this.setDataValue(JSON.stringify(val));
+        } else {
+          return this.setDataValue("favoritedBooks", JSON.stringify(val));
+        } */
       },
     },
   },
