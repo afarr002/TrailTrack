@@ -7,13 +7,39 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      favoritedBooks: "[]",
     });
+
+    // if (!isDecimal) {
+    //   throw new Error("This is not a decimal");
+    // }
 
     req.session.save(() => {
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put("/:id/favBooks", async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: { id: req.params.id },
+    });
+
+    console.log("******", dbUserData, req.body);
+
+    await User.update(
+      {
+        favoritedBooks: [dbUserData.favoritedBooks, req.body.bookId],
+      },
+      { where: { id: req.params.id } }
+    );
+
+    res.status(200).json(dbUserData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -56,6 +82,8 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//
 
 // Logout
 router.post("/logout", (req, res) => {
