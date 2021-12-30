@@ -1,0 +1,25 @@
+<div class="column">
+  {{#each arrayname as |book|}}
+  <h1 class="is-size-2 has-text-centered">Bookish Adventures</h1>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        {{book.title}}
+        by
+        {{book.author}}
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{book.description}}
+      </div>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <!--Need to hide this if they're not signed in-->
+        <span id="save"><a href="#">Save to Favorites</a></span>
+      </p>
+    </footer>
+    {{/each}}
+  </div>
+</div>
