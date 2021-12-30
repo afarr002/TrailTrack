@@ -24,7 +24,7 @@ Books.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    // book_id: {
+    // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
     //     model: "user",

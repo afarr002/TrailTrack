@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
+const { beforeBulkCreate } = require("./Trails");
 
 class User extends Model {
   checkPassword(passwordInput) {
@@ -38,6 +39,31 @@ User.init(
         /* isDecimal: true,
         isLowercase: true,
         isUppercase: true, */
+      },
+    },
+    favoritedBooks: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      // references: {
+      //   model: "books",
+      //   key: "id",
+      // },
+      get: function () {
+        return JSON.parse(this.getDataValue("favoritedBooks"));
+      },
+      set: function (val) {
+        return this.setDataValue("favoritedBooks", JSON.stringify(val));
+        let favBooks = JSON.stringify(val);
+        this.setDataValue("favoritedBooks", favBooks);
+        return favBooks;
+        /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
+        let favBooks = JSON.stringify(val).replace(/\\/g, "");
+        return favBooks; */
+        /* if (this.getDataValue('favoritedBooks') === null) {
+          return this.setDataValue(JSON.stringify(val));
+        } else {
+          return this.setDataValue("favoritedBooks", JSON.stringify(val));
+        } */
       },
     },
   },
