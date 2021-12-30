@@ -42,23 +42,24 @@ User.init(
       },
     },
     favoritedBooks: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
       // references: {
       //   model: "books",
       //   key: "id",
       // },
       get: function () {
-        return this.getDataValue("favoritedBooks");
+        return JSON.parse(this.getDataValue("favoritedBooks"));
       },
       set: function (val) {
-        let favBooks = JSON.stringify(val).replace(/\\/g, "");
+        return this.setDataValue("favoritedBooks", JSON.stringify(val));
+        let favBooks = JSON.stringify(val);
         this.setDataValue("favoritedBooks", favBooks);
         return favBooks;
         /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
         let favBooks = JSON.stringify(val).replace(/\\/g, "");
         return favBooks; */
-        /* if (JSON.stringify(val) === null) {
+        /* if (this.getDataValue('favoritedBooks') === null) {
           return this.setDataValue(JSON.stringify(val));
         } else {
           return this.setDataValue("favoritedBooks", JSON.stringify(val));
