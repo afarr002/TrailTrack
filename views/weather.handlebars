@@ -1,0 +1,52 @@
+<div class="container is-fluid">
+    <div class="notification has-text-centered is-transparent card is-shadowless">
+        <label class="has-text-weight-bold" for="inputCity">Where do you want to go?</label>
+        <form id="citySearchForm">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="inputCity" placeholder="Enter city name..">
+                    <div class="input-group-append">
+                        <button class="button is-rounded is-warning is-small has-text-weight-bold" type="button"
+                            id="citySearch">search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container is-fluid">
+        <div id="weatherContent" class="notification has-text-centered is-transparent card is-shadowless">
+            <h3 class="card-title has-text-weight-bold"><img id="icon" alt="Weather Icon" /></h3>
+            <div class="card-text mt-0">
+                <p>Temperature: <span class="temp"></span></p>
+                <p>Humidity: <span class="humidity"></span></p>
+                <p>Wind Speed: <span class="wind"></span></p>
+                <p>UV Index: <span class="uvIndex"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container is-fluid">
+    <div class="notification is-transparent card is-shadowless">
+        <div class="buttons is-centered">
+            <p class="control">
+                <a class="button is-warning is-rounded is-small has-text-weight-bold">
+                    <span class="icon">
+                        <i class="fas fa-campground"></i>
+                    </span>
+                    <span>Go Camping</span>
+                </a>
+            </p>
+            <p class="control">
+                <a class="button is-warning is-rounded is-small has-text-weight-bold">
+                    <span class="icon">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </span>
+                    <span>Read A Book</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div> 
