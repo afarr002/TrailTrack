@@ -15,13 +15,29 @@ Campgrounds.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    campground_location: {
+    campground_lat: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    campground_lon: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    fees: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    url: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    images: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
