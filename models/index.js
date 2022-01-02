@@ -1,8 +1,8 @@
 const User = require("./User");
-const Trails = require("./Trails");
+const Campgrounds = require("./Campgrounds");
 const Books = require("./Books");
 
-User.hasMany(Trails, {
+User.hasMany(Campgrounds, {
   foreignKey: "trail_id",
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
@@ -14,4 +14,4 @@ User.hasMany(Trails, {
 //   onUpdate: "CASCADE",
 // });
 
-module.exports = { User, Trails, Books };
+module.exports = { User, Campgrounds, Books };
