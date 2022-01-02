@@ -4,15 +4,15 @@
 const npsApiKey = "oSfzNz3dTkFvHFrco2C2sYljO4uhXBaTYHwx7kib";
 const weatherApiKey = "66cae1bd334eb7747100576e02048328";
 
-const insertCampgroundsEl = document.querySelector("#insertCampgroundsEl");
-const insertFutureCampgroundWeatherEl =
-  document.querySelector("#insertWeatherCard");
+// const insertCampgroundsEl = document.querySelector("#insertCampgroundsEl");
+// const insertFutureCampgroundWeatherEl =
+//   document.querySelector("#insertWeatherCard");
 let campLat = "";
 let campLon = "";
 let campName = "";
 
 const getCampgrounds = () => {
-  const getCampApiUrl = `https://developer.nps.gov/api/v1/campgrounds?stateCode=CO&api_key=${npsApiKey}`;
+  const getCampApiUrl = `https://developer.nps.gov/api/v1/campgrounds?stateCode=${userStateSelection}&api_key=${npsApiKey}`;
 
   fetch(getCampApiUrl)
     .then((res) => {
@@ -83,4 +83,7 @@ const futureWeather = () => {
     });
 };
 
-getCampgrounds();
+module.exports = {
+  getCampgrounds,
+  futureWeather,
+};
