@@ -5,6 +5,7 @@ const userSeedData = [
     username: "aaron002",
     email: "aaron002@email.com",
     password: "passNotHashed",
+    favoritedBooks: [],
   },
 ];
 

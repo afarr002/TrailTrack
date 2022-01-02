@@ -49,13 +49,15 @@ User.init(
       //   key: "id",
       // },
       get: function () {
-        return JSON.parse(this.getDataValue("favoritedBooks"));
+        return this.getDataValue("favoritedBooks").split(";");
+        /* return JSON.parse(this.getDataValue("favoritedBooks")); */
       },
       set: function (val) {
-        return this.setDataValue("favoritedBooks", JSON.stringify(val));
-        let favBooks = JSON.stringify(val);
+        return this.setDataValue("favoritedBooks", val.join(";"));
+        /* return this.setDataValue("favoritedBooks", JSON.stringify(val)); */
+        /* let favBooks = JSON.stringify(val);
         this.setDataValue("favoritedBooks", favBooks);
-        return favBooks;
+        return favBooks; */
         /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
         let favBooks = JSON.stringify(val).replace(/\\/g, "");
         return favBooks; */
