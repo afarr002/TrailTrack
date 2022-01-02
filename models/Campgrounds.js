@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Trails extends Model {}
+class Campgrounds extends Model {}
 
-Trails.init(
+Campgrounds.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,11 @@ Trails.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    trail_name: {
+    campground_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    trail_location: {
+    campground_location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,32 +23,13 @@ Trails.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    difficulty: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    trail_length: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    route_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    trail_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "trails",
+    modelName: "Campgrounds",
   }
 );
 
-module.exports = Trails;
+module.exports = Campgrounds;
