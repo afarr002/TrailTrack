@@ -1,32 +1,48 @@
 <!-- {{!-- Signup --}} -->
-<div class="container">
-    <div id="signup" class="col s12 tabcontent"></div>
-    <h2>Please Complete the Sign Up Form</h2>
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                <input username="username" id="user_name-signup" type="text" class="validate">
-                <label for="user_name-signup">User Name</label>
-            </div>
-
-            <div class="row"></div>
-            <div class="input-field col s12">
-                <input id="email-signup" type="email" class="validate">
-                <label for="email-signup">Email</label>
+<section class="hero is-transparent">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" class="box">
+                        <div class="field">
+                            <h1><span class="icon is-small"><i class="fas fa-user-plus" aria-hidden="true"></i></span>
+                                <span>Sign Up</span>
+                            </h1>
+                            <label for="" class="label">Name</label>
+                            <div class="control">
+                                <input id="username" type="name" placeholder="username" class="validate input" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input id="email-login" type="email" placeholder="e.g. bobsmith@gmail.com"
+                                    class="validate input" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input id="password-login" type="password" placeholder="*******" class="validate input"
+                                    required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="container buttons is-centered">
+                            <div class="field control has-icons-left">
+                                <button class="button is-warning">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="password-signup" type="password" class="validate">
-                <label for="password-signup">Password</label>
-            </div>
-        </div>
-
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </div>
-    </form>
-</div>
+    </div>
