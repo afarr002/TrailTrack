@@ -1,33 +1,30 @@
 const router = require("express").Router();
 const { Campgrounds, User } = require("../../models");
-const { getCampground, futureWeather } = require("../../api-fetch");
-const npsApiKey = "oSfzNz3dTkFvHFrco2C2sYljO4uhXBaTYHwx7kib";
-const userStateSelection =
-  "CO"; /* document.querySelector("#userStateSelection"); */
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const campground = await getCampground(userStateSelection);
-//     res.status(200).json(campground);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+router.get("/", (req, res) => {
+  try {
+    const campgrounds = await Campgrounds.findAll();
 
-router.post("/", async (req, res) => {
-  const getCampApiUrl = `https://developer.nps.gov/api/v1/campgrounds?stateCode=${userStateSelection}&api_key=${npsApiKey}`;
+    res.status(200).json(campgrounds);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-  fetch(getCampApiUrl)
-    .then((res) => {
-      return res.json();
-    })
-    .then((info) => {
-      console.log(info);
+router.get("/:id", async (req, res) => {
+  try {
+    const campgrounds = await Campgrounds.findByPk(req.params.id);
 
-      res.render("campgrounds", { info });
-    })
-    .catch((err) => res.status(500).send(err));
+    if (!campgrounds) {
+      res.status(404).json({
+        message: "No campgrounds found with that ID!",
+      });
+      return;
+    }
+    res.status(200).json(campgrounds);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
