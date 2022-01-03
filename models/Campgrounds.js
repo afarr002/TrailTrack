@@ -11,15 +11,15 @@ Campgrounds.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    campground_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    campground_lat: {
+    latitude: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    campground_lon: {
+    longitude: {
       type: DataTypes.STRING,
       allowNull: false,
     },
