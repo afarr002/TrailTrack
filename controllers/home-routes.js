@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const { Books, Campgrounds } = require("../models");
 
+router.get("/", (req, res) => {
+  res.render("landing");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.loggedin) {
     res.redirect("/");
@@ -17,36 +21,36 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/books", async (req, res) => {
-  try {
-    const dbBooksData = await Books.findAll();
+// router.get("/books", async (req, res) => {
+//   try {
+//     const dbBooksData = await Books.findAll();
 
-    const books = dbBooksData.map((books) => books.get({ plain: true }));
-    res.render("book", {
-      books,
-      loggedin: req.sessions.loggedin,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const books = dbBooksData.map((books) => books.get({ plain: true }));
+//     res.render("book", {
+//       books,
+//       // loggedin: req.sessions.loggedin,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
-router.get("/campgrounds", async (req, res) => {
-  try {
-    const dbCampgroundData = await Campgrounds.findAll();
+// router.get("/campgrounds", async (req, res) => {
+//   try {
+//     const dbCampgroundData = await Campgrounds.findAll();
 
-    const campgrounds = dbCampgroundData.map((campgrounds) => {
-      campgrounds.get({ plain: true });
-    });
-    res.render("campgrounds", {
-      campgrounds,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const campgrounds = dbCampgroundData.map((campgrounds) => {
+//       campgrounds.get({ plain: true });
+//     });
+//     res.render("campgrounds", {
+//       campgrounds,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

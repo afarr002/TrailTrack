@@ -3,9 +3,17 @@ const { Books } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
-    const books = await Books.findAll();
-    res.status(200).json(books);
+    const /* dbCampgroundData */ books = await Books.findAll();
+
+    // const books = dbCampgroundData.map((books) => {
+    //   books.get({ plain: true });
+    // });
+    res.render("books", {
+      books,
+      // loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
