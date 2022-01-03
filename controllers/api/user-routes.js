@@ -2,13 +2,15 @@ const router = require("express").Router();
 const { User, Books } = require("../../models");
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      favoritedBooks: null,
+      // favoritedBooks: null,
     });
+    console.log(dbUserData);
 
     // if (!isDecimal) {
     //   throw new Error("This is not a decimal");

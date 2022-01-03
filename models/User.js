@@ -40,33 +40,33 @@ User.init(
         isUppercase: true, */
       },
     },
-    favoritedBooks: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      // references: {
-      //   model: "books",
-      //   key: "id",
-      // },
-      get: function () {
-        return this.getDataValue("favoritedBooks").split(";");
-        /* return JSON.parse(this.getDataValue("favoritedBooks")); */
-      },
-      set: function (val) {
-        return this.setDataValue("favoritedBooks", val.join(";"));
-        /* return this.setDataValue("favoritedBooks", JSON.stringify(val)); */
-        /* let favBooks = JSON.stringify(val);
-        this.setDataValue("favoritedBooks", favBooks);
-        return favBooks; */
-        /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
-        let favBooks = JSON.stringify(val).replace(/\\/g, "");
-        return favBooks; */
-        /* if (this.getDataValue('favoritedBooks') === null) {
-          return this.setDataValue(JSON.stringify(val));
-        } else {
-          return this.setDataValue("favoritedBooks", JSON.stringify(val));
-        } */
-      },
-    },
+    // favoritedBooks: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: true,
+    //   // references: {
+    //   //   model: "books",
+    //   //   key: "id",
+    //   // },
+    //   get: function () {
+    //     return this.getDataValue("favoritedBooks").split(";");
+    //     /* return JSON.parse(this.getDataValue("favoritedBooks")); */
+    //   },
+    //   set: function (val) {
+    //     return this.setDataValue("favoritedBooks", val.join(";"));
+    //     /* return this.setDataValue("favoritedBooks", JSON.stringify(val)); */
+    //     /* let favBooks = JSON.stringify(val);
+    //     this.setDataValue("favoritedBooks", favBooks);
+    //     return favBooks; */
+    //     /* User.favoritedBooks.push(this.setDataValue("favoritedBooks"));
+    //     let favBooks = JSON.stringify(val).replace(/\\/g, "");
+    //     return favBooks; */
+    //     /* if (this.getDataValue('favoritedBooks') === null) {
+    //       return this.setDataValue(JSON.stringify(val));
+    //     } else {
+    //       return this.setDataValue("favoritedBooks", JSON.stringify(val));
+    //     } */
+    //   },
+    // },
   },
   {
     hooks: {
