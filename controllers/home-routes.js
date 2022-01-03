@@ -9,6 +9,14 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/signup", (req, res) => {
+  if (req.session.loggedin) {
+    res.redirect("/");
+    return;
+  }
+  res.render("signup");
+});
+
 router.get("/books", async (req, res) => {
   try {
     const dbBooksData = await Books.findAll();
