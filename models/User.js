@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
-const { beforeBulkCreate } = require("./Campgrounds");
 
 class User extends Model {
   checkPassword(passwordInput) {
@@ -77,7 +76,6 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     modelName: "user",
   }
