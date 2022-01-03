@@ -1,5 +1,6 @@
 const seedBooks = require("./book-seeds");
 const seedUsers = require("./users-seeds");
+const seedCampgrounds = require("./campgrounds-seeds");
 const sequelize = require("../config/connection");
 
 const seedAll = async () => {
@@ -9,6 +10,8 @@ const seedAll = async () => {
   console.log("\nBOOKS SEEDED!!\n");
   await seedUsers();
   console.log("\nUSERS SEEDED!!\n");
+  await seedCampgrounds();
+  console.log("\nCAMPGROUNDS SEEDED!!\n");
 
   process.exit(0);
 };
