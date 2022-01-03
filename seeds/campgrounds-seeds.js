@@ -69,17 +69,6 @@ const dbCampgroundInfo = [
       "https://www.nps.gov/common/uploads/structured_data/18FDA1A4-9D3D-8FFF-6F6A3B208467701B.jpg",
   },
   {
-    url: "https://www.nps.gov/cure/planyourvisit/camp_east_portal.htm",
-    name: "East Portal Campground",
-    description:
-      "The East Portal Campground is located within Curecanti National Recreation Area, but is adjacent to and only accessible from Black Canyon of the Gunnison National Park, which has a $30 entrance fee. The campground is located at the bottom of the canyon, along the Gunnison River. It is a small campground shaded by box elder trees. East Portal is closed in winter, when the Bureau of Reclamation closes the East Portal Road. Elevation: 6526 feet",
-    latitude: "38.527059599536",
-    longitude: "-107.64948401793",
-    fees: "",
-    images:
-      "https://www.nps.gov/common/uploads/structured_data/E48E7B0F-0591-B8DD-6FA7B4DAE28285B0.jpg",
-  },
-  {
     url: "https://www.nps.gov/blca/planyourvisit/camp_east_portal.htm",
     name: "East Portal Campground",
     description:

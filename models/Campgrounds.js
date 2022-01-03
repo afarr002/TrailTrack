@@ -14,14 +14,17 @@ Campgrounds.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     latitude: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     longitude: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     description: {
       type: DataTypes.TEXT,
