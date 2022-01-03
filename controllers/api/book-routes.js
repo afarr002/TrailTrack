@@ -3,15 +3,15 @@ const { Books } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
-    const /* dbCampgroundData */ books = await Books.findAll();
+    const books = await Books.findAll();
 
-    // const books = dbCampgroundData.map((books) => {
-    //   books.get({ plain: true });
-    // });
-    res.render("books", {
-      books,
-      // loggedIn: req.session.loggedIn,
-    });
+    res
+      .render("books", {
+        books,
+        loggedIn: req.session.loggedIn,
+      })
+      .status(200)
+      .json(books);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
