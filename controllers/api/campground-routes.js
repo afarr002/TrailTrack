@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Campgrounds, User } = require("../../models");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const campgrounds = await Campgrounds.findAll();
 
