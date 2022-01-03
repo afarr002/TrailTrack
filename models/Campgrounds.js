@@ -44,7 +44,7 @@ Campgrounds.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Campgrounds",
+    modelName: "campgrounds",
   }
 );
 
