@@ -1,5 +1,6 @@
 <h1 class="is-size-2 has-text-centered">Book Adventures</h1>
 <div class="columns is-flex-wrap-wrap">
+  {{#if loggedIn}}
   {{#each books as |book|}}
     <div class="column is-6-tablet is-4-desktop">
       <div class="card m-6">
@@ -24,4 +25,7 @@
       </div>
     </div>
   {{/each}}
+  {{else}}
+  <div> You need to be logged in!</div>
+  {{/if}}
 </div>
