@@ -38,6 +38,6 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`\nServer now running on port ${PORT}.
-        View site at http://localhost:${PORT} and create and account!`);
+        View site at http://localhost:${PORT}/home and create and account!`);
   });
 });
