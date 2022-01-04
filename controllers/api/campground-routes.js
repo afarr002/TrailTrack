@@ -5,13 +5,10 @@ router.get("/", async (req, res) => {
   try {
     const campgrounds = await Campgrounds.findAll();
 
-    res
-      .render("campgrounds", {
-        campgrounds,
-        loggedIn: req.session.loggedIn,
-      })
-      .status(200)
-      .json(campgrounds);
+    res.render("campgrounds", {
+      campgrounds,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
