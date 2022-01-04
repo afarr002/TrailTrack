@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Books, Campgrounds } = require("../models");
 
-router.get("/", (req, res) => {
+router.get("/home", (req, res) => {
   res.render("landing");
 });
 

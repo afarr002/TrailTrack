@@ -3,7 +3,8 @@
 // // const weatherApiKey = process.env.WEATHER_API_KEY;
 // const npsApiKey = "oSfzNz3dTkFvHFrco2C2sYljO4uhXBaTYHwx7kib";
 // const fetch = require("node-fetch");
-// // const weatherApiKey = "66cae1bd334eb7747100576e02048328";
+const weatherApiKey = "66cae1bd334eb7747100576e02048328";
+const axios = require("axios");
 // const userStateSelection = "CO";
 // let campgroundDbInfo = [];
 
@@ -44,32 +45,34 @@
 
 // console.log(campgroundDbInfo);
 // getCampgrounds();
+const latitude = "55";
+const longitude = "-101";
 
-// // const futureWeather = () => {
-// //   const weatherApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${campLat}&lon=${campLon}&appid=${weatherApiKey}&units=imperial`;
+const futureWeather = () => {
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=imperial`;
 
-// //   fetch(weatherApiUrl)
-// //     .then((res) => {
-// //       return res.json();
-// //     })
-// //     .then((weatherInfo) => {
-// //       console.log(weatherInfo);
-// //       for (i = 0; i < weatherInfo.daily.length; i++) {
-// //         const weatherCard = `<div class="currentBlock">
-// //           <h2>
-// //             ${campName} (${new Date().toLocaleDateString()})
-// //           </h2>
-// //           <p>Max Temp: ${weatherInfo.daily[i].temp.max}F</p>
-// //           <p>Min Temp: ${weatherInfo.daily[i].temp.min}F</p>
-// //           <p>Weather: ${
-// //             weatherInfo.daily[i].weather[0].description
-// //           } <img src="https://openweathermap.org/img/w/${
-// //           weatherInfo.daily[i].weather[0].icon
-// //         }.png"></p>
-// //         </div>`;
-// //         return (insertFutureCampgroundWeatherEl.innerHTML = weatherCard);
-// //       }
-// //     });
-// // };
+  axios.get(weatherApiUrl).then((res) => {
+    console.log(res);
+  });
+  // .then((weatherInfo) => {
+  //   console.log(weatherInfo);
+  //   for (i = 0; i < weatherInfo.daily.length; i++) {
+  //     const weatherCard = `<div class="currentBlock">
+  //       <h2>
+  //         ${campName} (${new Date().toLocaleDateString()})
+  //       </h2>
+  //       <p>Max Temp: ${weatherInfo.daily[i].temp.max}F</p>
+  //       <p>Min Temp: ${weatherInfo.daily[i].temp.min}F</p>
+  //       <p>Weather: ${
+  //         weatherInfo.daily[i].weather[0].description
+  //       } <img src="https://openweathermap.org/img/w/${
+  //       weatherInfo.daily[i].weather[0].icon
+  //     }.png"></p>
+  //     </div>`;
+  //     return (insertFutureCampgroundWeatherEl.innerHTML = weatherCard);
+  //   }
+  //});
+};
 
+futureWeather();
 // module.exports = campgroundDbInfo;
