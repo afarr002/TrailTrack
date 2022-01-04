@@ -5,6 +5,10 @@ router.get("/home", (req, res) => {
   res.render("landing");
 });
 
+router.get("/", (req, res) => {
+  res.render("landing");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.loggedin) {
     res.redirect("/");
