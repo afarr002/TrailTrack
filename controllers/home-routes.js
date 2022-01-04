@@ -7,7 +7,7 @@ router.get("/home", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedin) {
-    res.redirect("/");
+    res.redirect("/home");
     return;
   }
   res.render("login");
@@ -15,42 +15,10 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedin) {
-    res.redirect("/");
+    res.redirect("/home");
     return;
   }
   res.render("signup");
 });
-
-// router.get("/books", async (req, res) => {
-//   try {
-//     const dbBooksData = await Books.findAll();
-
-//     const books = dbBooksData.map((books) => books.get({ plain: true }));
-//     res.render("book", {
-//       books,
-//       // loggedin: req.sessions.loggedin,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get("/campgrounds", async (req, res) => {
-//   try {
-//     const dbCampgroundData = await Campgrounds.findAll();
-
-//     const campgrounds = dbCampgroundData.map((campgrounds) => {
-//       campgrounds.get({ plain: true });
-//     });
-//     res.render("campgrounds", {
-//       campgrounds,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
