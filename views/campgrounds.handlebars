@@ -1,25 +1,28 @@
 <h1 class="is-size-2 has-text-centered">Campgrounds</h1>
 <div class="columns is-flex-wrap-wrap">
-  {{#each campgrounds as |camp|}}
-    <div class="column is-6-tablet is-4-desktop">
-      <div class="card m-6">
-        <header class="card-header">
-          <p class="card-header-title">
-            {{camp.dataValues.name}}
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p>{{camp.dataValues.description}}</p>
-            <p>Expected fees around: {{camp.dataValues.fees}}</p>
+  {{#if loggedIn}}
+    {{#each campgrounds as |camp|}}
+      <div class="column is-6-tablet is-4-desktop">
+        <div class="card m-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              {{camp.dataValues.name}}
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p>{{camp.dataValues.description}}</p>
+              <p>Expected fees around: {{camp.dataValues.fees}}</p>
+            </div>
           </div>
+          <footer class="card-footer">
+            <a class="card-footer-item" href=`{{camp.dataValues.url}}`>Learn more</a>
+            <a class="card-footer-item">Check weather</a>
+          </footer>
         </div>
-        <footer class="card-footer">
-          <a class="card-footer-item" href=`{{camp.dataValues.url}}`>Learn more</a>
-          <a class="card-footer-item">Check weather</a>
-        </footer>
       </div>
-    </div>
-  {{/each}}
-
+    {{/each}}
+  {{else}}
+    <div> You need to be logged in!</div>
+  {{/if}}
 </div>
