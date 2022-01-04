@@ -2,19 +2,18 @@
 <div class="columns is-flex-wrap-wrap">
   {{#if loggedIn}}
   {{#each books as |book|}}
-  {{log book}}
     <div class="column is-6-tablet is-4-desktop">
       <div class="card m-6">
         <header class="card-header">
           <p class="card-header-title">
-            {{book.title}}
+            {{book.dataValues.title}}
             by
-            {{book.author}}
+            {{book.dataValues.author}}
           </p>
         </header>
         <div class="card-content">
           <div class="content">
-            {{book.description}}
+            {{book.dataValues.description}}
           </div>
         </div>
         <footer class="card-footer">
