@@ -19,6 +19,8 @@ This application will find all National Park Campgrounds in Colorado and display
 ## Link to Deployed
 
 https://floating-shelf-98484.herokuapp.com/
+<img width="1220" alt="happycamper-screenshot" src="https://user-images.githubusercontent.com/88466341/148245854-b1cb2d66-d6a6-47c0-9e77-bceb9a39bfba.png">
+
 
 ## Usage
 
